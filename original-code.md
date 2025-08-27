@@ -1,3 +1,11 @@
+# Original Code Reference
+
+Please paste the original code here to show how it was supposed to look.
+
+## Original CSS for CTA Section
+
+```css
+/* Paste the original CTA CSS here */
 /* Basic reset */
 
 *,
@@ -16,10 +24,9 @@
   font-style: normal;
 }
 
+
 body {
   font-family: "Noto Sans Gothic", sans-serif;
-  /* MOBILE RESPONSIVE: Prevent horizontal scrolling on mobile devices */
-  overflow-x: hidden;
 }
 
 .hidden {
@@ -54,143 +61,6 @@ header {
   padding: 1rem 0;
   gap: 3rem;
   justify-content: center;
-  /* MOBILE RESPONSIVE: Make header responsive and prevent overflow */
-  flex-wrap: wrap;
-  position: relative;
-}
-
-/* MOBILE RESPONSIVE: Mobile menu toggle button */
-.mobile-menu-toggle {
-  display: none;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.mobile-menu-toggle:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-/* MOBILE RESPONSIVE: Hide navigation on mobile by default */
-@media (max-width: 768px) {
-  header {
-    padding: 1rem;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    position: relative;
-  }
-  
-  .left_nav,
-  .right_nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    padding: 1rem;
-    z-index: 1000;
-    border-top: 1px solid #333;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Show left nav first when active */
-  .left_nav.active {
-    display: flex !important;
-    animation: slideDown 0.3s ease-out;
-    border-bottom: 2px solid #444;
-    padding-bottom: 1rem;
-  }
-  
-  /* Show right nav below left nav when active */
-  .right_nav.active {
-    display: flex !important;
-    animation: slideDown 0.3s ease-out;
-    top: calc(100% + 200px); /* Position below left nav */
-    padding-top: 1rem;
-  }
-  
-  /* Add label for social media section */
-  .right_nav.active::before {
-    content: "🔗 Follow DJ Dino Bravo";
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #444;
-    margin-bottom: 0.75rem;
-    display: block;
-  }
-  
-  .mobile-menu-toggle {
-    display: block;
-  }
-  
-  header > a > img {
-    height: 60px; /* Smaller logo on mobile */
-  }
-  
-  /* Animation for mobile menu */
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Improve mobile menu item styling */
-  .left_nav a,
-  .right_nav a {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #333;
-    transition: all 0.2s ease;
-    border-radius: 4px;
-    margin: 2px 0;
-  }
-  
-  .left_nav a:hover,
-  .right_nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding-left: 0.5rem;
-    transform: translateX(5px);
-  }
-  
-  .left_nav a:last-child,
-  .right_nav a:last-child {
-    border-bottom: none;
-  }
-  
-  /* Make social media links more prominent */
-  .right_nav a p {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .right_nav a img {
-    width: 20px;
-    height: 20px;
-  }
 }
 
 .left_nav>a>p {
@@ -234,45 +104,6 @@ main {
 
   /* position: relative; */
   color: white;
-  
-  /* MOBILE RESPONSIVE: Adjust height and background for mobile */
-  min-height: 100vh;
-}
-
-/* MOBILE RESPONSIVE: Fix background attachment on mobile devices */
-@media (max-width: 768px) {
-  main {
-    background-attachment: scroll; /* Fixed backgrounds don't work well on mobile */
-  }
-}
-
-@media (width <=950px) {
-  .hidden {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-color: white;
-    gap: .5rem;
-    position: relative;
-  }
-
-  .dropdown__nav {
-    display: none;
-    flex-direction: column;
-    gap: .5rem;
-    padding: 1rem;
-  }
-
-  .left_nav,
-  .right_nav {
-    display: none !important;
-  }
-
-  .cta>h1 {
-    font-size: 3rem;
-  }
-}
 }
 
 .cta__container {
@@ -319,8 +150,6 @@ main {
   border-radius: 30px;
   font-size: 1.5rem;
 }
-
-/* MOBILE RESPONSIVE: CTA rules moved to main mobile media query above */
 
 .cta>a:hover {
   background-color: #3A3D40;
@@ -385,30 +214,11 @@ footer {
 footer>.foot__icons {
   display: flex;
   gap: 2rem;
-  /* MOBILE RESPONSIVE: Wrap icons on smaller screens */
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 footer>.foot__icons>a>img {
   width: auto;
   height: 30px;
-}
-
-/* MOBILE RESPONSIVE: Footer adjustments for mobile */
-@media (max-width: 768px) {
-  footer {
-    padding: 1.5rem 1rem;
-  }
-  
-  footer>.foot__icons {
-    gap: 1.5rem;
-  }
-  
-  footer p {
-    text-align: center;
-    font-size: 0.9rem;
-  }
 }
 
 .bio__main {
@@ -425,49 +235,13 @@ footer>.foot__icons>a>img {
   justify-content: center;
   align-items: center;
   padding: 5rem;
-  /* MOBILE RESPONSIVE: Stack elements vertically on mobile */
-  flex-wrap: wrap;
+  /* flex-direction: column; */
 }
 
 .bio__container>img {
   width: auto;
   height: 700px;
   border-radius: 50px;
-  /* MOBILE RESPONSIVE: Make image responsive */
-  max-width: 100%;
-  height: auto;
-  max-height: 500px;
-}
-
-/* MOBILE RESPONSIVE: Biography section mobile layout */
-@media (max-width: 768px) {
-  .bio__container {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 2rem;
-  }
-  
-  .bio__container>img {
-    max-height: 300px;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .bio__text {
-    width: 100% !important;
-  }
-  
-  .arrange-con {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .bio__container>.bio__text>.arrange-con>img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-  }
 }
 
 .arrange-con {
@@ -872,32 +646,8 @@ footer>.foot__icons>a>img {
   }
 
   .location__grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .location-card,
-  .hours-card {
-    padding: 1.5rem;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  
-  .location__container h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .location-card h3,
-  .hours-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .address p,
-  .hours-list li {
-    font-size: 0.95rem;
-    line-height: 1.5;
   }
 
   .school__main>.about__school-con {
@@ -1100,51 +850,6 @@ footer>.foot__icons>a>img {
 
 .showcase-con {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-/* MOBILE RESPONSIVE: Carousel improvements for mobile */
-@media (max-width: 768px) {
-  .showcase-con {
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-  }
-  
-  .carousel {
-    max-width: 90vw;
-    width: 100%;
-    margin: 1rem auto 2rem;
-  }
-  
-  .carousel-track img {
-    width: 100%;
-    max-width: 280px;
-    height: 180px;
-    object-fit: contain;
-  }
-  
-  .carousel-btn {
-    font-size: 1.5rem;
-    padding: 0.3rem 0.7rem;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid white;
-  }
-  
-  .carousel-btn.prev {
-    left: 5px;
-  }
-  
-  .carousel-btn.next {
-    right: 5px;
-  }
-  
-  .carousel h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
 }
 
 /* Section background */
@@ -1221,34 +926,13 @@ footer>.foot__icons>a>img {
   /* red hover accent */
 }
 
-/* MOBILE RESPONSIVE: Contact form improvements */
+/* Responsive */
 @media (max-width: 768px) {
-  .contact-section {
-    padding: 2rem 1rem;
-  }
-  
-  .form-row {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
-  }
-  
-  .bookings-contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem;
-  }
-  
-  .bookings-section {
-    padding: 2rem 1rem;
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* MOBILE RESPONSIVE: Enhanced mobile navigation and layout improvements */
 @media (width <=950px) {
   .hidden {
     display: flex;
@@ -1267,235 +951,162 @@ footer>.foot__icons>a>img {
     padding: 1rem;
   }
 
-  /* Remove the conflicting display:none rule that breaks mobile menu */
-  /* .left_nav,
+  .left_nav,
   .right_nav {
     display: none !important;
-  } */
+  }
 
-  /* CTA rules moved to main mobile media query */
-  
-  /* MOBILE RESPONSIVE: Additional mobile improvements */
-  .music_showcase {
-    padding: 2rem 1rem;
-  }
-  
-  .music_showcase>h3 {
-    font-size: 1.3rem;
-  }
-  
-  /* MOBILE RESPONSIVE: Improve text readability on mobile */
-  .bio__text>.arrange-con>.text-con {
-    font-size: 1.1rem;
-  }
-  
-  .bio__container>.bio__text>h1 {
-    font-size: 2rem;
-  }
-}
-
-/* ===============================================
-   COMPREHENSIVE MOBILE RESPONSIVE IMPROVEMENTS
-   =============================================== */
-
-/* MOBILE RESPONSIVE: Small mobile devices (320px - 480px) */
-@media (max-width: 480px) {
-  /* Header adjustments for very small screens */
-  header {
-    padding: 0.5rem;
-  }
-  
-  header > a > img {
-    height: 50px;
-  }
-  
-  /* CTA section for small screens - removed conflicting rules */
-  /* .cta rules moved to main mobile media query */
-  
   .cta>h1 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
-  }
-  
-  .cta>a {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-  
-  /* Music showcase grid for small screens - show all 6 videos */
-  .yt__showcase {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.8rem !important;
-    padding: 0 0.5rem !important;
-    max-width: 100% !important;
-  }
-  
-  .yt__showcase .video {
-    width: 100% !important;
-    aspect-ratio: 16/9 !important;
-  }
-  
-  .yt__showcase .video iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 4px !important;
-  }
-  
-  /* Ensure music showcase section is visible */
-  .music_showcase {
-    background-color: #333 !important;
-    padding: 2rem 0.5rem !important;
-    display: block !important;
-  }
-  
-  .music_showcase h3 {
-    font-size: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-    text-align: center !important;
-    color: white !important;
-  }
-  
-  /* Biography carousel for small screens */
-  .carousel {
-    max-width: 95vw;
-  }
-  
-  .carousel-track img {
-    width: 100%;
-    max-width: 250px;
-    height: 150px;
-  }
-  
-  /* Location section for small screens */
-  .location__section {
-    padding: 2rem 0.5rem;
-  }
-  
-  .location-card,
-  .hours-card {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  .yt__showcase {
-    gap: 0.5rem;
-  }
-  
-  /* Biography section for small screens */
-  .bio__container {
-    padding: 1rem;
-  }
-  
-  .bio__text {
-    padding: 0.8rem;
-  }
-  
-  .bio__container>.bio__text>h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Contact section for small screens */
-  .contact-section h2 {
-    font-size: 1.5rem;
-  }
-  
-  .bookings-section-title {
-    font-size: 1.8rem;
-  }
-  
-  /* Footer for small screens */
-  footer>.foot__icons {
-    gap: 1rem;
-  }
-  
-  footer>.foot__icons>a>img {
-    height: 25px;
+    font-size: 3rem;
   }
 }
+```
 
-/* MOBILE RESPONSIVE: Medium mobile devices and tablets (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  /* CTA rules handled by main mobile media query */
-  
-  .bio__container {
-    padding: 3rem 1.5rem;
-  }
-  
-  .contact-section {
-    padding: 3rem 1.5rem;
-  }
-}
+## Original HTML Structure (if needed)
 
-/* MOBILE RESPONSIVE: Landscape orientation adjustments */
-@media (max-width: 768px) and (orientation: landscape) {
-  main {
-    height: 100vh;
-  }
-  
-  /* CTA rules handled by main mobile media query */
-}
+```html
+<!-- Paste original HTML here if needed -->
+<!DOCTYPE html>
+<html lang="en">
 
-/* MOBILE RESPONSIVE: Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-  /* Increase touch targets for mobile */
-  .left_nav>a>p,
-  .right_nav>a>p {
-    padding: 0.5rem;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .cta>a {
-    min-height: 48px;
-    padding: 1rem 2rem;
-  }
-  
-  footer>.foot__icons>a {
-    padding: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/js/index.js" defer></script>
+    <title>DJ Dino Bravo</title>
+</head>
 
-/* MOBILE RESPONSIVE: High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Ensure images look crisp on high DPI screens */
-  .bio__container>img,
-  .bio__container>.bio__text>.arrange-con>img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
+<body>
+    <header>
+        <!-- <div class="hidden">
+            <img src="./assets/images/interface-ui-menu-list-hamburger-svgrepo-com.svg" alt="Mobile Menu">
+            <div class="dropdown__nav">
+                <a href="./biography.html">
+                    <p>Biography</p>
+                </a>
+                <a href="./dj_school.html">
+                    <p>DJ School</p>
+                </a>
+                <a href="./contact.html">
+                    <p>Bookings</p>
+                </a>
+            </div>
+        </div> -->
+        <div class="left_nav">
+            <a href="./biography.html">
+                <p>Biography</p>
+            </a>
+            <a href="./dj_school.html">
+                <p>DJ School</p>
+            </a>
+            <a href="./contact.html">
+                <p>Bookings</p>
+            </a>
+        </div>
+        <a href="./index.html">
+            <img src="./assets/images/logo.svg" alt="Logo" class="logo">
+        </a>
+        <div class="right_nav">
+            <a href="https://www.youtube.com/user/djdinobravo">
+                <p><img src="./assets/images/hero_tube.svg" alt="YouTube Icon">YouTube</p>
+            </a>
+            <a href="https://www.facebook.com/djdinobravo/">
+                <p><img src="./assets/images/hero_fb.svg" alt="Facebook Icon Link">Facebook</p>
+            </a>
+            <a href="https://soundcloud.com/djdinobravo">
+                <p><img src="./assets/images/hero_sc.svg" alt="SoundCloud Icon">SoundCloud</p>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="cta__container">
+            <div class="cta">
+                <h1>Book of Bravo Vol: I</h1>
+                <!-- <h3>Coming Soon!</h3> -->
+                <a href="https://open.spotify.com/album/0qwaNAzbJ2cjQ8JEcxGacg" class="chkout_btn">
+                    Listen Here
+                </a>
+            </div>
+        </div>
+        <div class="music_showcase">
+            <h3>Latest Music</h3>
+            <div class="yt__showcase">
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ITZ0jqpMg_o?si=BjK4IZBTK_6HAiqs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/208SEJo_LU0?si=8oxZxAp-whNjqxrR"
+                        title="DJ Dino Bravo – Video 2" loading="lazy" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/1Objz7dx0kY?si=SgugOOc0yXtyrCdq"
+                        title="DJ Dino Bravo – Video 3" loading="lazy" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/Hx4xIxeQBlo?si=QqpoS3g6w4PY5shd"
+                        title="DJ Dino Bravo – Video 4" loading="lazy" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/iC6eOWoKopE?si=hnNNb04h4ggYK_U2"
+                        title="DJ Dino Bravo – Video 5" loading="lazy" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/7ssunJzEvl0?si=YnnjxbhVJMqy08Mv"
+                        title="DJ Dino Bravo – Video 6" loading="lazy" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Connect</h3>
+        <div class="foot__icons">
+            <a href="https://www.facebook.com/djdinobravo/">
+                <img src="./assets/images/hero_fb.svg" alt="Facebook Icon">
+            </a>
+            <a href="https://www.instagram.com/djdinobravo/?hl=en">
+                <img src="./assets/images/hero_insta.svg" alt="Instagram Icon">
+            </a>
+            <a href="https://soundcloud.com/djdinobravo">
+                <img src="./assets/images/hero_sc.svg" alt="SoundCloud Icon">
+            </a>
+            <a href="https://open.spotify.com/artist/6ph0EJhjqYJzgjKZk6dgCG">
+                <img src="./assets/images/hero_spot.svg" alt="Spotify Icon">
+            </a>
+            <a href="https://www.youtube.com/user/djdinobravo">
+                <img src="./assets/images/hero_tube.svg" alt="YouTube Icon">
+            </a>
+        </div>
+        <p>All Rights Reserved djdinobravo.music 2025</p>
+    </footer>
+</body>
 
-/* MOBILE RESPONSIVE: Accessibility improvements for mobile */
-@media (prefers-reduced-motion: reduce) {
-  /* Reduce animations for users who prefer reduced motion */
-  .course-card,
-  .session-card,
-  .carousel-btn {
-    transition: none;
-  }
-  
-  .carousel-track {
-    transition: none;
-  }
-}
+</html>
+```
 
-/* MOBILE RESPONSIVE: Dark mode support for mobile */
-@media (prefers-color-scheme: dark) {
-  /* Ensure good contrast in dark mode */
-  .course-card,
-  .location-card,
-  .hours-card {
-    background: #2a2a2a;
-    color: white;
-  }
-  
-  .course-features li {
-    color: #ccc;
-  }
-}
+## Notes
+
+Add any notes about how it should look or behave:
+
+- 
+- 
+- 
