@@ -242,22 +242,74 @@ main {
 /* MOBILE RESPONSIVE: Fix background attachment on mobile devices */
 @media (max-width: 768px) {
   main {
-    height: 100vh;
-    background-attachment: scroll !important; /* Fixed backgrounds don't work well on mobile */
+    height: 100vh !important;
+    background-attachment: scroll !important;
     background-image: url("../images/image5.jpeg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    position: relative;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
   }
   
   .cta__container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: auto;
-    background-color: transparent;
+    position: relative !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto !important;
+    background-color: transparent !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cta {
+    width: 90% !important;
+    max-width: 400px !important;
+    padding: 2rem !important;
+    position: relative !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: 3px solid white !important;
+    border-radius: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    z-index: 1000 !important;
+  }
+  
+  .cta h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem) !important;
+    margin-bottom: 1rem !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+  
+  .cta a {
+    font-size: 1.2rem !important;
+    padding: 1rem 2rem !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid white !important;
+    border-radius: 30px !important;
+    text-decoration: none !important;
+    margin-top: 1rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .cta a:hover {
+    background-color: white !important;
+    color: black !important;
   }
 }
 
@@ -321,44 +373,7 @@ main {
   text-align: center;
 }
 
-/* MOBILE RESPONSIVE: Adjust CTA positioning and sizing on mobile */
-@media (max-width: 768px) {
-  .cta {
-    width: 90%;
-    bottom: 30px;
-    padding: 1.5rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    border: 2px solid white !important;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .cta>a {
-    font-size: 1.2rem !important;
-    padding: 1rem 2rem !important;
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    background-color: black !important;
-    color: white !important;
-    border: 2px solid white !important;
-    border-radius: 30px !important;
-    text-decoration: none !important;
-    margin-top: 1rem;
-  }
-  
-  .cta>h1 {
-    font-size: clamp(1.8rem, 6vw, 3rem) !important;
-    margin-bottom: 1rem !important;
-    color: white !important;
-  }
-}
+/* MOBILE RESPONSIVE: CTA rules moved to main mobile media query above */
 
 .cta>a:hover {
   background-color: #3A3D40;
@@ -1311,9 +1326,7 @@ footer>.foot__icons>a>img {
     display: none !important;
   } */
 
-  .cta>h1 {
-    font-size: 3rem;
-  }
+  /* CTA rules moved to main mobile media query */
   
   /* MOBILE RESPONSIVE: Additional mobile improvements */
   .music_showcase {
