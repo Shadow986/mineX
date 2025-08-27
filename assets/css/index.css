@@ -253,42 +253,34 @@ main {
     box-sizing: border-box !important;
   }
   
-  /* Fix main background image to show in flex container with proper space */
+  /* Fix main to show background image properly with both CTA and videos inside */
   main {
-    height: auto !important; /* Allow it to extend as needed */
-    min-height: 100vh !important;
     background-attachment: scroll !important;
     background-image: url("../images/image5.jpeg") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     position: relative !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    display: block !important; /* Change from flex to block for proper layout */
+    padding: 0 !important;
+  }
+  
+  /* Style the CTA container to show properly over background */
+  .cta__container {
+    height: 100vh !important; /* Take full viewport height */
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-end !important;
     align-items: center !important;
-    padding-bottom: 2rem !important; /* Space for CTA */
-  }
-  
-  /* Remove problematic pseudo-elements */
-  main::before {
-    display: none !important;
-  }
-  
-  /* Fix CTA container positioning - keep it in the hero section */
-  .cta__container {
+    padding: 2rem !important;
+    box-sizing: border-box !important;
     position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    background-color: transparent !important;
-    display: flex !important;
-    justify-content: center !important;
-    padding: 20px !important;
-    margin-top: auto !important;
-    z-index: 100 !important;
+    z-index: 10 !important;
   }
   
-  /* Style the CTA section properly within the hero area */
+  /* Style the CTA section properly */
   .cta {
     width: 90% !important;
     max-width: 400px !important;
@@ -302,7 +294,6 @@ main {
     text-align: center !important;
     backdrop-filter: blur(10px) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-    margin-bottom: 2rem !important;
   }
   
   .cta h1 {
@@ -335,7 +326,7 @@ main {
     color: white !important;
   }
   
-  /* Fix YouTube videos showcase for mobile - separate from hero */
+  /* Fix YouTube videos showcase - it's inside main, so style accordingly */
   .music_showcase {
     background-color: #333 !important;
     padding: 3rem 1rem !important;
@@ -343,7 +334,7 @@ main {
     position: relative !important;
     z-index: 10 !important;
     width: 100% !important;
-    margin-top: 0 !important; /* No gap between hero and videos */
+    margin-top: 0 !important;
   }
   
   .music_showcase h3 {
@@ -371,17 +362,7 @@ main {
     height: 100% !important;
     border-radius: 8px !important;
   }
-  
-  /* Ensure proper layout flow - hero section, then videos */
-  main > * {
-    position: relative !important;
-    z-index: 10 !important;
-  }
-  
-  /* Make sure the page flows properly */
-  body {
-    overflow-x: hidden !important;
-  }
+}
 }
 
 .cta__container {
