@@ -244,6 +244,10 @@ main {
   main {
     height: 100vh;
     background-attachment: scroll; /* Fixed backgrounds don't work well on mobile */
+    background-image: url("../images/image5.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -313,11 +317,25 @@ main {
     width: 90%;
     bottom: 20px;
     padding: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid white;
   }
   
   .cta>a {
     font-size: 1.2rem;
     padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .cta>h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    margin-bottom: 1rem;
   }
 }
 
@@ -871,8 +889,32 @@ footer>.foot__icons>a>img {
   }
 
   .location__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
+  }
+  
+  .location-card,
+  .hours-card {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .location__container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .location-card h3,
+  .hours-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .address p,
+  .hours-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .school__main>.about__school-con {
@@ -1075,6 +1117,51 @@ footer>.foot__icons>a>img {
 
 .showcase-con {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* MOBILE RESPONSIVE: Carousel improvements for mobile */
+@media (max-width: 768px) {
+  .showcase-con {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .carousel {
+    max-width: 90vw;
+    width: 100%;
+    margin: 1rem auto 2rem;
+  }
+  
+  .carousel-track img {
+    width: 100%;
+    max-width: 280px;
+    height: 180px;
+    object-fit: contain;
+  }
+  
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+  }
+  
+  .carousel-btn.prev {
+    left: 5px;
+  }
+  
+  .carousel-btn.next {
+    right: 5px;
+  }
+  
+  .carousel h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Section background */
@@ -1246,6 +1333,10 @@ footer>.foot__icons>a>img {
     width: 95%;
     padding: 1rem;
     bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid white;
   }
   
   .cta>h1 {
@@ -1258,6 +1349,33 @@ footer>.foot__icons>a>img {
   }
   
   /* Music showcase grid for small screens */
+  .yt__showcase {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  /* Biography carousel for small screens */
+  .carousel {
+    max-width: 95vw;
+  }
+  
+  .carousel-track img {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+  }
+  
+  /* Location section for small screens */
+  .location__section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .location-card,
+  .hours-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
   .yt__showcase {
     gap: 0.5rem;
   }
