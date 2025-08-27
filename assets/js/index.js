@@ -5,7 +5,12 @@ function toggleMobileMenu() {
         const leftNav = document.getElementById('leftNav');
         const rightNav = document.getElementById('rightNav');
         
-        console.log('Found elements:', { leftNav: !!leftNav, rightNav: !!rightNav }); // Debug log
+        console.log('Found elements:', { 
+            leftNav: !!leftNav, 
+            rightNav: !!rightNav,
+            leftNavClasses: leftNav ? leftNav.className : 'not found',
+            rightNavClasses: rightNav ? rightNav.className : 'not found'
+        }); // Debug log
         
         if (leftNav && rightNav) {
             const wasActive = leftNav.classList.contains('active');
@@ -13,6 +18,8 @@ function toggleMobileMenu() {
             rightNav.classList.toggle('active');
             
             console.log('Menu toggled from', wasActive, 'to', leftNav.classList.contains('active')); // Debug log
+            console.log('Left nav classes after toggle:', leftNav.className);
+            console.log('Right nav classes after toggle:', rightNav.className);
             
             // Force a repaint to ensure CSS changes are applied
             leftNav.offsetHeight;
@@ -117,13 +124,12 @@ function initCarousel(id) {
         });
     }
 
-    // MOBILE RESPONSIVE: Pause autoplay on mobile to save battery
-    if (window.innerWidth > 768) {
-        setInterval(() => {
-            index = (index + 1) % items.length;
-            updateSlide();
-        }, 3000);
-    }
+    // MOBILE RESPONSIVE: Enable autoplay on all devices with longer interval on mobile
+    const autoplayInterval = window.innerWidth > 768 ? 3000 : 4000; // Slower on mobile
+    setInterval(() => {
+        index = (index + 1) % items.length;
+        updateSlide();
+    }, autoplayInterval);
 }
 
 // Init all 3 carousels with safety checks

@@ -243,11 +243,21 @@ main {
 @media (max-width: 768px) {
   main {
     height: 100vh;
-    background-attachment: scroll; /* Fixed backgrounds don't work well on mobile */
-    background-image: url("../images/image5.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: scroll !important; /* Fixed backgrounds don't work well on mobile */
+    background-image: url("../images/image5.jpeg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+  }
+  
+  .cta__container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: transparent;
   }
 }
 
@@ -315,27 +325,38 @@ main {
 @media (max-width: 768px) {
   .cta {
     width: 90%;
-    bottom: 20px;
+    bottom: 30px;
     padding: 1.5rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid white !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
   .cta>a {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 1.2rem !important;
+    padding: 1rem 2rem !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid white !important;
+    border-radius: 30px !important;
+    text-decoration: none !important;
+    margin-top: 1rem;
   }
   
   .cta>h1 {
-    font-size: clamp(1.8rem, 6vw, 3rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 6vw, 3rem) !important;
+    margin-bottom: 1rem !important;
+    color: white !important;
   }
 }
 
@@ -1328,16 +1349,8 @@ footer>.foot__icons>a>img {
     height: 50px;
   }
   
-  /* CTA section for small screens */
-  .cta {
-    width: 95%;
-    padding: 1rem;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.95);
-    border: 2px solid white;
-  }
+  /* CTA section for small screens - removed conflicting rules */
+  /* .cta rules moved to main mobile media query */
   
   .cta>h1 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
@@ -1415,9 +1428,7 @@ footer>.foot__icons>a>img {
 
 /* MOBILE RESPONSIVE: Medium mobile devices and tablets (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .cta {
-    width: 80%;
-  }
+  /* CTA rules handled by main mobile media query */
   
   .bio__container {
     padding: 3rem 1.5rem;
@@ -1434,14 +1445,7 @@ footer>.foot__icons>a>img {
     height: 100vh;
   }
   
-  .cta {
-    bottom: 5px;
-    padding: 1rem;
-  }
-  
-  .cta>h1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-  }
+  /* CTA rules handled by main mobile media query */
 }
 
 /* MOBILE RESPONSIVE: Touch-friendly improvements */
