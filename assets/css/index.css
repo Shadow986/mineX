@@ -241,125 +241,13 @@ main {
 
 /* MOBILE RESPONSIVE: Fix background attachment on mobile devices */
 @media (max-width: 768px) {
-  /* Ensure header stays separate and visible */
-  header {
-    display: flex !important;
-    padding: 1rem !important;
-    justify-content: space-between !important;
-    position: relative !important;
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    z-index: 1001 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Fix main for mobile - keep desktop flex design but fix mobile issues */
   main {
-    height: auto !important; /* Allow content to extend */
-    min-height: 100vh !important;
-    background-attachment: scroll !important; /* Fix for mobile */
-    background-image: url("../images/image5.jpeg") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    /* Keep desktop flex layout */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-  
-  /* Fix CTA container for mobile while preserving desktop design */
-  .cta__container {
-    min-width: 100vw !important;
-    height: auto !important;
-    background-color: transparent !important;
-    position: relative !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 2rem !important;
-  }
-  
-  /* Style the CTA section for mobile */
-  .cta {
-    width: 90% !important;
-    max-width: 400px !important;
-    padding: 2rem !important;
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    border: 3px solid white !important;
-    border-radius: 15px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    backdrop-filter: blur(10px) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  .cta h1 {
-    font-size: clamp(1.8rem, 6vw, 3rem) !important;
-    margin-bottom: 1rem !important;
-    color: white !important;
-    font-weight: bold !important;
-    display: block !important;
-    line-height: 1.2 !important;
-  }
-  
-  .cta a {
-    font-size: 1.2rem !important;
-    padding: 1rem 2rem !important;
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    background-color: white !important;
-    color: black !important;
-    border: 2px solid white !important;
-    border-radius: 30px !important;
-    text-decoration: none !important;
-    margin-top: 1rem !important;
-    font-weight: bold !important;
-    transition: all 0.3s ease !important;
-  }
-  
-  .cta a:hover {
-    background-color: transparent !important;
-    color: white !important;
-  }
-  
-  /* Fix YouTube videos showcase for mobile */
-  .music_showcase {
-    background-color: #333 !important;
-    padding: 3rem 1rem !important;
-    display: block !important;
-    width: 100% !important;
-  }
-  
-  .music_showcase h3 {
-    color: white !important;
-    text-align: center !important;
-    font-size: 2rem !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  .yt__showcase {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-  }
-  
-  .yt__showcase .video {
-    width: 100% !important;
-    aspect-ratio: 16/9 !important;
-  }
-  
-  .yt__showcase .video iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 8px !important;
+    height: 100vh;
+    background-attachment: scroll; /* Fixed backgrounds don't work well on mobile */
+    background-image: url("../images/image5.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 }
