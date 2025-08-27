@@ -110,10 +110,32 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
   
-  .left_nav.active,
+  /* Show left nav first when active */
+  .left_nav.active {
+    display: flex !important;
+    animation: slideDown 0.3s ease-out;
+    border-bottom: 2px solid #444;
+    padding-bottom: 1rem;
+  }
+  
+  /* Show right nav below left nav when active */
   .right_nav.active {
     display: flex !important;
     animation: slideDown 0.3s ease-out;
+    top: calc(100% + 200px); /* Position below left nav */
+    padding-top: 1rem;
+  }
+  
+  /* Add label for social media section */
+  .right_nav.active::before {
+    content: "🔗 Follow DJ Dino Bravo";
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #444;
+    margin-bottom: 0.75rem;
+    display: block;
   }
   
   .mobile-menu-toggle {
@@ -141,18 +163,33 @@ header {
   .right_nav a {
     padding: 0.75rem 0;
     border-bottom: 1px solid #333;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    margin: 2px 0;
   }
   
   .left_nav a:hover,
   .right_nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     padding-left: 0.5rem;
+    transform: translateX(5px);
   }
   
   .left_nav a:last-child,
   .right_nav a:last-child {
     border-bottom: none;
+  }
+  
+  /* Make social media links more prominent */
+  .right_nav a p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .right_nav a img {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -1160,10 +1197,11 @@ footer>.foot__icons>a>img {
     padding: 1rem;
   }
 
-  .left_nav,
+  /* Remove the conflicting display:none rule that breaks mobile menu */
+  /* .left_nav,
   .right_nav {
     display: none !important;
-  }
+  } */
 
   .cta>h1 {
     font-size: 3rem;
