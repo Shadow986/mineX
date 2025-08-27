@@ -253,34 +253,35 @@ main {
     box-sizing: border-box !important;
   }
   
-  /* Fix main to show background image properly with both CTA and videos inside */
+  /* Fix main for mobile - keep desktop flex design but fix mobile issues */
   main {
-    background-attachment: scroll !important;
+    height: auto !important; /* Allow content to extend */
+    min-height: 100vh !important;
+    background-attachment: scroll !important; /* Fix for mobile */
     background-image: url("../images/image5.jpeg") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    position: relative !important;
-    min-height: 100vh !important;
-    height: auto !important;
-    display: block !important; /* Change from flex to block for proper layout */
-    padding: 0 !important;
-  }
-  
-  /* Style the CTA container to show properly over background */
-  .cta__container {
-    height: 100vh !important; /* Take full viewport height */
+    /* Keep desktop flex layout */
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-end !important;
     align-items: center !important;
-    padding: 2rem !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    z-index: 10 !important;
+    justify-content: flex-end !important;
   }
   
-  /* Style the CTA section properly */
+  /* Fix CTA container for mobile while preserving desktop design */
+  .cta__container {
+    min-width: 100vw !important;
+    height: auto !important;
+    background-color: transparent !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 2rem !important;
+  }
+  
+  /* Style the CTA section for mobile */
   .cta {
     width: 90% !important;
     max-width: 400px !important;
@@ -294,6 +295,7 @@ main {
     text-align: center !important;
     backdrop-filter: blur(10px) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    margin-bottom: 2rem !important;
   }
   
   .cta h1 {
@@ -326,15 +328,12 @@ main {
     color: white !important;
   }
   
-  /* Fix YouTube videos showcase - it's inside main, so style accordingly */
+  /* Fix YouTube videos showcase for mobile */
   .music_showcase {
     background-color: #333 !important;
     padding: 3rem 1rem !important;
     display: block !important;
-    position: relative !important;
-    z-index: 10 !important;
     width: 100% !important;
-    margin-top: 0 !important;
   }
   
   .music_showcase h3 {
